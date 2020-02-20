@@ -15,6 +15,7 @@ def on_mouse(event, x, y, flags, param):
         draw = True
         x0, y0 = x, y
     elif draw and event == cv2.EVENT_MOUSEMOVE:
+        np.copyto(img, img0)
         cv2.rectangle(img, (x0, y0), (x, y), (0, 255, 0), 3)
     elif event == cv2.EVENT_LBUTTONUP:
         draw = False
